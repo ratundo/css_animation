@@ -1,0 +1,75 @@
+@keyframes dance-tails {
+    0%, 100% {
+      transform: rotateX(0deg);
+    }
+    25%, 75% {
+      transform: rotateX(30deg);
+    }
+    50% {
+      transform: rotateX(-30deg);
+    }
+  }
+
+@keyframes wink {
+    0%, 50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes paws-moving {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+  
+    50% {
+      transform: rotate(30deg);
+    }
+    75% {
+        transform: rotate(-30deg);
+      }
+    }
+  
+
+  #left-cat_tail {
+    transform-origin: right;
+  }  
+  
+  #right-cat_tail {
+    transform-origin: left;
+    animation-delay: .2s;
+  }  
+  
+  #left-cat_tail, #right-cat_tail {
+    animation: dance-tails 1s infinite reverse; 
+  }
+  
+  #right-cat_right-eye, #left-cat_left-eye {
+    animation: wink 1s infinite;
+  }
+
+  #left-cat_left-eye {
+    animation-delay: .2s;
+  }
+
+  #left-cat_right-hand, #right-cat_right-hand, #left-cat_left-hand, #right-cat_left-hand,
+  #left-cat_right-leg, #right-cat_right-leg, #left-cat_left-leg, #right-cat_left-leg { 
+   
+    transform-box: fill-box;
+    animation: paws-moving 1s ease alternate infinite;
+    transform-origin: top right;
+  }
+
+  #left-cat_left-hand, #right-cat_left-hand {
+    transform-origin: top left;
+  }
+
+  #left-cat_right-leg, #right-cat_right-leg, #left-cat_left_leg, #right-cat_left_leg {
+    transform-origin: top;
+  }
+
+  #left-cat_left-leg, #right-cat_left-leg {
+    animation: paws-moving 1s ease alternate infinite-reversed;
+  }

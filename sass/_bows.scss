@@ -1,0 +1,24 @@
+@keyframes bows-moving {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+  
+    50% {
+      transform: rotate(30deg);
+    }
+    75% {
+        transform: rotate(-30deg);
+      }
+  }
+
+
+  #right-cat_bow, #left-cat_bow{
+    transform-box: fill-box;
+    animation: bows-moving .4s linear alternate infinite;
+    transform-origin: center;
+  }
+
+  #left-cat_bow {
+    animation-delay: .1s;
+  }
+  

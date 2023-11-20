@@ -1,0 +1,56 @@
+@function random-color() {
+  @return rgb(random(255), random(255), random(255));
+}
+
+$colors: ();
+
+@for $i from 1 through 10 {
+  $colors: append($colors, random-color());
+}
+
+@keyframes dance {
+  0%, 100% {
+    transform: translate(0) rotateX(0);
+  }
+  25% {
+    transform: translate(0, -10px) rotateX(30deg);
+  }
+  50% {
+    transform: translate(0, 10px) rotateX(-30deg);
+  }
+  75% {
+    transform: translate(0, -5px) rotateX(15deg);
+  }
+}
+
+@keyframes changeColor {
+  0%, 100% {
+    fill: nth($colors, 1);
+  }
+  25% {
+    fill: nth($colors, 2);
+  }
+  50% {
+    fill: nth($colors, 3);
+  }
+  75% {
+    fill: nth($colors, 4);
+  }
+}
+
+$num-letters: 7;
+
+@for $i from 1 through $num-letters {
+  $delay: 0.2s * $i;
+  
+  #welcome path:nth-child(#{$i}) {
+    animation: dance 2s infinite alternate ease-in-out, changeColor 3s infinite alternate-reverse ease-in-out;
+    animation-delay: $delay
+  }
+
+  #points path:nth-child(#{$i}) {
+    animation: changeColor 3s infinite alternate ease;
+    animation-delay: $delay
+  }
+}
+

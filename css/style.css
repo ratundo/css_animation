@@ -1,0 +1,199 @@
+@keyframes dance {
+  0%, 100% {
+    transform: translate(0) rotateX(0);
+  }
+  25% {
+    transform: translate(0, -10px) rotateX(30deg);
+  }
+  50% {
+    transform: translate(0, 10px) rotateX(-30deg);
+  }
+  75% {
+    transform: translate(0, -5px) rotateX(15deg);
+  }
+}
+@keyframes changeColor {
+  0%, 100% {
+    fill: rgb(32, 58, 53);
+  }
+  25% {
+    fill: rgb(82, 229, 175);
+  }
+  50% {
+    fill: rgb(22, 76, 194);
+  }
+  75% {
+    fill: rgb(136, 193, 95);
+  }
+}
+#welcome path:nth-child(1) {
+  animation: dance 2s infinite alternate ease-in-out, changeColor 3s infinite alternate-reverse ease-in-out;
+  animation-delay: 0.2s;
+}
+
+#points path:nth-child(1) {
+  animation: changeColor 3s infinite alternate ease;
+  animation-delay: 0.2s;
+}
+
+#welcome path:nth-child(2) {
+  animation: dance 2s infinite alternate ease-in-out, changeColor 3s infinite alternate-reverse ease-in-out;
+  animation-delay: 0.4s;
+}
+
+#points path:nth-child(2) {
+  animation: changeColor 3s infinite alternate ease;
+  animation-delay: 0.4s;
+}
+
+#welcome path:nth-child(3) {
+  animation: dance 2s infinite alternate ease-in-out, changeColor 3s infinite alternate-reverse ease-in-out;
+  animation-delay: 0.6s;
+}
+
+#points path:nth-child(3) {
+  animation: changeColor 3s infinite alternate ease;
+  animation-delay: 0.6s;
+}
+
+#welcome path:nth-child(4) {
+  animation: dance 2s infinite alternate ease-in-out, changeColor 3s infinite alternate-reverse ease-in-out;
+  animation-delay: 0.8s;
+}
+
+#points path:nth-child(4) {
+  animation: changeColor 3s infinite alternate ease;
+  animation-delay: 0.8s;
+}
+
+#welcome path:nth-child(5) {
+  animation: dance 2s infinite alternate ease-in-out, changeColor 3s infinite alternate-reverse ease-in-out;
+  animation-delay: 1s;
+}
+
+#points path:nth-child(5) {
+  animation: changeColor 3s infinite alternate ease;
+  animation-delay: 1s;
+}
+
+#welcome path:nth-child(6) {
+  animation: dance 2s infinite alternate ease-in-out, changeColor 3s infinite alternate-reverse ease-in-out;
+  animation-delay: 1.2s;
+}
+
+#points path:nth-child(6) {
+  animation: changeColor 3s infinite alternate ease;
+  animation-delay: 1.2s;
+}
+
+#welcome path:nth-child(7) {
+  animation: dance 2s infinite alternate ease-in-out, changeColor 3s infinite alternate-reverse ease-in-out;
+  animation-delay: 1.4s;
+}
+
+#points path:nth-child(7) {
+  animation: changeColor 3s infinite alternate ease;
+  animation-delay: 1.4s;
+}
+
+@keyframes dance-tails {
+  0%, 100% {
+    transform: rotateX(0deg);
+  }
+  25%, 75% {
+    transform: rotateX(30deg);
+  }
+  50% {
+    transform: rotateX(-30deg);
+  }
+}
+@keyframes wink {
+  0%, 50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes paws-moving {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+}
+#left-cat_tail {
+  transform-origin: right;
+}
+
+#right-cat_tail {
+  transform-origin: left;
+  animation-delay: 0.2s;
+}
+
+#left-cat_tail, #right-cat_tail {
+  animation: dance-tails 1s infinite reverse;
+}
+
+#right-cat_right-eye, #left-cat_left-eye {
+  animation: wink 1s infinite;
+}
+
+#left-cat_left-eye {
+  animation-delay: 0.2s;
+}
+
+#left-cat_right-hand, #right-cat_right-hand, #left-cat_left-hand, #right-cat_left-hand,
+#left-cat_right-leg, #right-cat_right-leg, #left-cat_left-leg, #right-cat_left-leg {
+  transform-box: fill-box;
+  animation: paws-moving 1s ease alternate infinite;
+  transform-origin: top right;
+}
+
+#left-cat_left-hand, #right-cat_left-hand {
+  transform-origin: top left;
+}
+
+#left-cat_right-leg, #right-cat_right-leg, #left-cat_left_leg, #right-cat_left_leg {
+  transform-origin: top;
+}
+
+#left-cat_left-leg, #right-cat_left-leg {
+  animation: paws-moving 1s ease alternate infinite-reversed;
+}
+
+@keyframes bows-moving {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+}
+#right-cat_bow, #left-cat_bow {
+  transform-box: fill-box;
+  animation: bows-moving 0.4s linear alternate infinite;
+  transform-origin: center;
+}
+
+#left-cat_bow {
+  animation-delay: 0.1s;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=style.css.map */
